@@ -91,18 +91,33 @@ export default function ContactSection() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
-    // Simulate sending message (network request)
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSuccess(true);
-    }, 1500);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -120,7 +135,7 @@ export default function ContactSection() {
       />
 
       <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
-        
+
         {/* Contact Form State (Animate between Form and Success Screen) */}
         <div className="relative flex flex-col h-full justify-center">
           <AnimatePresence mode="wait">
@@ -146,11 +161,10 @@ export default function ContactSection() {
                         onChange={handleChange}
                         placeholder="Your name"
                         disabled={isSubmitting}
-                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${
-                          errors.name
-                            ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
-                            : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
-                        } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
+                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${errors.name
+                          ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
+                          : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
+                          } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
                       />
                       {errors.name && (
                         <p className="mt-1 text-xs text-red-500 font-medium">{errors.name}</p>
@@ -189,11 +203,10 @@ export default function ContactSection() {
                       onChange={handleChange}
                       placeholder="+91 8688408742"
                       disabled={isSubmitting}
-                      className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${
-                        errors.phone
-                          ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
-                          : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
-                      } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
+                      className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${errors.phone
+                        ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
+                        : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
+                        } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
                     />
                     {errors.phone && (
                       <p className="mt-1 text-xs text-red-500 font-medium">{errors.phone}</p>
@@ -210,11 +223,10 @@ export default function ContactSection() {
                       rows={4}
                       placeholder="Tell us about your requirements..."
                       disabled={isSubmitting}
-                      className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${
-                        errors.message
-                          ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
-                          : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
-                      } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all resize-none`}
+                      className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${errors.message
+                        ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
+                        : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
+                        } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all resize-none`}
                     />
                     {errors.message && (
                       <p className="mt-1 text-xs text-red-500 font-medium">{errors.message}</p>
@@ -320,24 +332,22 @@ export default function ContactSection() {
                   whileHover={{ x: 4 }}
                   className="flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-white/5 hover:border-indigo-200 dark:hover:border-indigo-500/20 hover:shadow-lg transition-all duration-300 cursor-pointer text-left"
                 >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                    item.color === "indigo"
-                      ? "bg-indigo-50 dark:bg-indigo-500/10"
-                      : item.color === "purple"
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${item.color === "indigo"
+                    ? "bg-indigo-50 dark:bg-indigo-500/10"
+                    : item.color === "purple"
                       ? "bg-purple-50 dark:bg-purple-500/10"
                       : item.color === "emerald"
-                      ? "bg-emerald-50 dark:bg-emerald-500/10"
-                      : "bg-blue-50 dark:bg-blue-500/10"
-                  }`}>
-                    <Icon className={`w-6 h-6 ${
-                      item.color === "indigo"
-                        ? "text-indigo-600 dark:text-indigo-400"
-                        : item.color === "purple"
+                        ? "bg-emerald-50 dark:bg-emerald-500/10"
+                        : "bg-blue-50 dark:bg-blue-500/10"
+                    }`}>
+                    <Icon className={`w-6 h-6 ${item.color === "indigo"
+                      ? "text-indigo-600 dark:text-indigo-400"
+                      : item.color === "purple"
                         ? "text-purple-600 dark:text-purple-400"
                         : item.color === "emerald"
-                        ? "text-emerald-600 dark:text-emerald-400"
-                        : "text-blue-600 dark:text-blue-400"
-                    }`} />
+                          ? "text-emerald-600 dark:text-emerald-400"
+                          : "text-blue-600 dark:text-blue-400"
+                      }`} />
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-gray-900 dark:text-white">{item.title}</h3>
