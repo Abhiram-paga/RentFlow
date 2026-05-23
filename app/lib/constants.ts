@@ -1,8 +1,8 @@
 import {
   Users, BedDouble, CreditCard, MessageSquareWarning, IndianRupee,
   UserCheck, BarChart3, Building2, Bell, FileText, Smartphone,
-  PieChart, BellRing, FileCheck, MessageCircle, BrainCircuit,
-  LineChart, QrCode, UsersRound, Cloud, ShieldCheck, Zap,
+  PieChart, FileCheck, MessageCircle,
+  LineChart, QrCode, UsersRound, ShieldCheck, Zap,
   Clock, TrendingUp, Headphones, Target, Wallet, LayoutDashboard,
 } from "lucide-react";
 
@@ -17,9 +17,9 @@ export const NAV_LINKS = [
 
 // ── Stats ───────────────────────────────────────────────
 export const STATS = [
-  { label: "Properties Managed", value: 2500, prefix: "", suffix: "+" },
-  { label: "Happy Tenants", value: 50000, prefix: "", suffix: "+" },
-  { label: "Revenue Processed", value: 25, prefix: "₹", suffix: " Cr+" },
+  { label: "Properties Managed", value: 10, prefix: "", suffix: "+" },
+  { label: "Happy Tenants", value: 1000, prefix: "", suffix: "+" },
+  { label: "Revenue Processed", value: 1000000, prefix: "₹", suffix: "+" },
   { label: "Satisfaction Rate", value: 99, prefix: "", suffix: "%" },
 ] as const;
 
@@ -90,11 +90,6 @@ export const FEATURES = [
 // ── Advanced Features ───────────────────────────────────
 export const ADVANCED_FEATURES = [
   {
-    icon: BellRing,
-    title: "Auto Rent Reminders",
-    description: "Send automatic rent reminders via SMS, email, and push notifications before due dates.",
-  },
-  {
     icon: FileCheck,
     title: "Automated Invoices",
     description: "Generate and share invoices automatically every billing cycle without manual effort.",
@@ -103,11 +98,6 @@ export const ADVANCED_FEATURES = [
     icon: MessageCircle,
     title: "WhatsApp Notifications",
     description: "Send rent receipts, reminders, and updates directly to tenants via WhatsApp.",
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI Insights",
-    description: "Get AI-powered recommendations on pricing, occupancy optimization, and tenant retention.",
   },
   {
     icon: LineChart,
@@ -128,11 +118,6 @@ export const ADVANCED_FEATURES = [
     icon: Smartphone,
     title: "Mobile App Integration",
     description: "Dedicated apps for both owners and tenants with full feature access on the go.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Backup",
-    description: "All your data is securely backed up on the cloud with 99.9% uptime guarantee.",
   },
   {
     icon: ShieldCheck,

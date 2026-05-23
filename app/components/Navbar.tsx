@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon, LayoutDashboard } from "lucide-react";
 import { useTheme } from "@/app/components/ThemeProvider";
 import { NAV_LINKS } from "@/app/lib/constants";
-import Button from "@/app/components/ui/Button";
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -79,7 +79,7 @@ export default function Navbar() {
               >
                 Login
               </a>
-              <Button size="sm">Book Demo</Button>
+
             </div>
 
             {/* Mobile Buttons */}
@@ -153,11 +153,7 @@ export default function Navbar() {
                 >
                   Login
                 </a>
-                <div className="mt-2">
-                  <Button size="lg" className="w-full">
-                    Book Demo
-                  </Button>
-                </div>
+
               </div>
             </motion.div>
           </>

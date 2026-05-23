@@ -21,7 +21,7 @@ export default function TrustedBySection() {
         viewport={{ once: true }}
         className="text-center text-sm font-medium text-gray-500 dark:text-gray-500 mb-8 uppercase tracking-wider"
       >
-        Trusted by 500+ property managers across India
+        Trusted by 10+ property managers across India
       </motion.p>
 
       {/* Logo Marquee */}
