@@ -96,7 +96,7 @@ export const ADVANCED_FEATURES = [
   },
   {
     icon: FileCheck,
-    title: "Automated Invoices",
+    title: "Semi Automated Invoices",
     description: "Generate and share invoices automatically every billing cycle without manual effort.",
   },
   {
@@ -104,21 +104,21 @@ export const ADVANCED_FEATURES = [
     title: "WhatsApp Notifications",
     description: "Send rent receipts, reminders, and updates directly to tenants via WhatsApp.",
   },
-  {
-    icon: BrainCircuit,
-    title: "AI Insights",
-    description: "Get AI-powered recommendations on pricing, occupancy optimization, and tenant retention.",
-  },
-  {
-    icon: LineChart,
-    title: "Smart Analytics",
-    description: "Deep dive into trends, forecasts, and performance metrics with intelligent reports.",
-  },
-  {
-    icon: QrCode,
-    title: "QR Visitor Entry",
-    description: "Generate QR codes for visitors enabling contactless and secure entry management.",
-  },
+  // {
+  //   icon: BrainCircuit,
+  //   title: "AI Insights",
+  //   description: "Get AI-powered recommendations on pricing, occupancy optimization, and tenant retention.",
+  // },
+  // {
+  //   icon: LineChart,
+  //   title: "Smart Analytics",
+  //   description: "Deep dive into trends, forecasts, and performance metrics with intelligent reports.",
+  // },
+  // {
+  //   icon: QrCode,
+  //   title: "QR Visitor Entry",
+  //   description: "Generate QR codes for visitors enabling contactless and secure entry management.",
+  // },
   {
     icon: UsersRound,
     title: "Staff Management",
@@ -134,11 +134,11 @@ export const ADVANCED_FEATURES = [
     title: "Cloud Backup",
     description: "All your data is securely backed up on the cloud with 99.9% uptime guarantee.",
   },
-  {
-    icon: ShieldCheck,
-    title: "Role-based Access",
-    description: "Control who sees what with granular role-based permissions for staff and managers.",
-  },
+  // {
+  //   icon: ShieldCheck,
+  //   title: "Role-based Access",
+  //   description: "Control who sees what with granular role-based permissions for staff and managers.",
+  // },
 ] as const;
 
 // ── Benefits ────────────────────────────────────────────
@@ -213,11 +213,11 @@ export const HOW_IT_WORKS_STEPS = [
 export const PRICING_PLANS = [
   {
     name: "Starter",
-    description: "Perfect for small PGs with up to 20 rooms",
+    description: "Perfect for small PGs with up to 50 rooms",
     monthlyPrice: 999,
-    yearlyPrice: 799,
+    yearlyPrice: 899,
     features: [
-      "Up to 20 rooms",
+      "Up to 50 rooms",
       "Tenant management",
       "Rent collection",
       "Basic analytics",
@@ -230,18 +230,17 @@ export const PRICING_PLANS = [
   {
     name: "Professional",
     description: "Ideal for growing PG businesses with multiple properties",
-    monthlyPrice: 2499,
-    yearlyPrice: 1999,
+    monthlyPrice: 1999,
+    yearlyPrice: 1799,
     features: [
       "Up to 100 rooms",
       "Everything in Starter",
-      "Advanced analytics",
       "Complaint management",
       "Expense tracking",
-      "Online payments",
       "WhatsApp notifications",
-      "Up to 5 properties",
+      "Up to 3 properties",
       "Priority support",
+      "24/7 phone support"
     ],
     cta: "Start Free Trial",
     highlighted: true,
@@ -252,14 +251,11 @@ export const PRICING_PLANS = [
     monthlyPrice: null,
     yearlyPrice: null,
     features: [
-      "Unlimited rooms",
+      "100+ rooms",
       "Everything in Professional",
-      "AI insights",
-      "Custom integrations",
       "Dedicated account manager",
-      "SLA guarantee",
       "On-premise option",
-      "Unlimited properties",
+      "3+ properties",
       "24/7 phone support",
     ],
     cta: "Contact Sales",
@@ -317,16 +313,16 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     question: "How does rent collection work?",
-    answer: "RentFlow automates rent collection by sending timely reminders via SMS, email, and WhatsApp. Tenants can pay online through UPI, cards, or net banking. You get instant notifications on payment receipt and can track all transactions from your dashboard.",
+    answer: "RentFlow automates rent collection by sending timely reminders via SMS, and WhatsApp. You get instant notifications on payment receipt and can track all transactions from your dashboard.",
   },
   {
     question: "Can I manage multiple properties?",
     answer: "Yes! RentFlow supports multi-property management. You can manage all your PGs, hostels, and rental properties from a single dashboard. Each property has its own rooms, tenants, and financial tracking while giving you a consolidated overview.",
   },
-  {
-    question: "Is online payment supported?",
-    answer: "Absolutely. We support all major payment methods including UPI (Google Pay, PhonePe, Paytm), credit/debit cards, net banking, and digital wallets. All transactions are secured with bank-grade encryption.",
-  },
+  // {
+  //   question: "Is online payment supported?",
+  //   answer: "Absolutely. We support all major payment methods including UPI (Google Pay, PhonePe, Paytm), credit/debit cards, net banking, and digital wallets. All transactions are secured with bank-grade encryption.",
+  // },
   {
     question: "Is there a mobile app?",
     answer: "Yes, we offer dedicated mobile apps for both property owners and tenants. Owners can manage their properties on the go, while tenants can pay rent, raise complaints, and receive notifications through their app.",
@@ -343,8 +339,7 @@ export const FAQS = [
 
 // ── Mobile App Features ─────────────────────────────────
 export const MOBILE_APP_FEATURES = [
-  { icon: CreditCard, title: "Pay Rent Online", description: "Quick and secure rent payments via UPI, cards, and wallets" },
-  { icon: MessageSquareWarning, title: "Raise Complaints", description: "Submit and track maintenance requests instantly" },
+  // { icon: MessageSquareWarning, title: "Raise Complaints", description: "Submit and track maintenance requests instantly" },
   { icon: Bell, title: "Smart Notifications", description: "Get alerts for rent due, complaints, and important updates" },
   { icon: FileText, title: "Digital Invoices", description: "Access and download rent receipts and invoices anytime" },
   { icon: BedDouble, title: "Room Management", description: "View room details, amenities, and occupancy status" },

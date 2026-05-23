@@ -147,10 +147,10 @@ export default function ContactSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="w-full rounded-2xl bg-white dark:bg-gray-900 border border-gray-150 dark:border-white/5 shadow-lg p-6 md:p-8 flex flex-col justify-between"
+                className="w-full h-10/12 rounded-2xl bg-white dark:bg-gray-900 border border-gray-150 dark:border-white/5 shadow-lg p-6 md:p-8 flex flex-col justify-between"
               >
                 <form className="space-y-5" onSubmit={handleSubmit}>
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid  gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                         Name
@@ -309,14 +309,14 @@ export default function ContactSection() {
                 color: "emerald",
                 href: "https://wa.me/918688408742?text=Hi%20RentFlow%20team,%20I'd%20like%20to%20know%20more%20about%20the%20platform.",
               },
-              {
-                icon: MapPin,
-                title: "Office",
-                description: "Come visit our office.",
-                value: "Hyderabad, Telangana, India",
-                color: "blue",
-                href: "https://maps.google.com/?q=Hyderabad,+Telangana,+India",
-              },
+              // {
+              //   icon: MapPin,
+              //   title: "Office",
+              //   description: "Come visit our office.",
+              //   value: "Hyderabad, Telangana, India",
+              //   color: "blue",
+              //   href: "https://maps.google.com/?q=Hyderabad,+Telangana,+India",
+              // },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -354,25 +354,26 @@ export default function ContactSection() {
                     <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">{item.description}</p>
                     <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{item.value}</p>
                   </div>
+                   
                 </motion.a>
               );
             })}
+                  <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-md">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14514.020772102895!2d78.33092629699013!3d17.41388623564233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94788f8c70c5%3A0xab6ff27f0783ae19!2sNanakramguda%2C%20Telangana!5e1!3m2!1sen!2sin!4v1779528492098!5m2!1sen!2sin"
+    width="100%"
+    height="300"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="w-full"
+  />
+</div>
           </div>
 
-          {/* Interactive Map Redirect */}
-          <motion.a
-            href="https://maps.google.com/?q=Hyderabad,+Telangana,+India"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ y: -2 }}
-            className="rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-white/5 hover:border-indigo-200 dark:hover:border-indigo-500/20 hover:shadow-lg h-40 flex items-center justify-center overflow-hidden transition-all duration-300 group cursor-pointer"
-          >
-            <div className="text-center">
-              <MapPin className="w-8 h-8 text-indigo-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
-              <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Hyderabad, Telangana, India</p>
-              <p className="text-xs text-gray-500 mt-0.5">Click to view on Google Maps</p>
-            </div>
-          </motion.a>
+        
+
         </motion.div>
       </div>
     </SectionWrapper>
