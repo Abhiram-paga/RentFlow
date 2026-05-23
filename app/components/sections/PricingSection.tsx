@@ -12,7 +12,7 @@ export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <SectionWrapper id="pricing" className="bg-gray-50/50 dark:bg-white/[0.02]">
+    <SectionWrapper id="pricing" className="bg-gray-50/50 dark:bg-white/2">
       <SectionHeading
         badge="Pricing"
         title="Simple, Transparent Pricing"
@@ -45,7 +45,7 @@ export default function PricingSection() {
             animate={{ opacity: 1, scale: 1 }}
             className="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-500/20"
           >
-            Save 20%
+            Save 10%
           </motion.span>
         )}
       </div>
@@ -62,8 +62,8 @@ export default function PricingSection() {
             whileHover={{ y: -8 }}
             className={`relative rounded-2xl p-6 md:p-8 transition-all duration-500 ${
               plan.highlighted
-                ? "bg-gradient-to-b from-indigo-600 to-purple-700 text-white shadow-2xl shadow-indigo-500/25 scale-[1.02] md:scale-105 z-10 border-0"
-                : "bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 shadow-lg"
+                ? "bg-linear-to-b from-indigo-600 to-purple-700 text-white shadow-2xl shadow-indigo-500/25 scale-[1.02] md:scale-105 z-10 border-0"
+                : "bg-white dark:bg-white/3 border border-gray-200 dark:border-white/5 shadow-lg"
             }`}
           >
             {plan.highlighted && (
