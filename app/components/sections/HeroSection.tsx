@@ -49,9 +49,9 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text */}
           <div className="text-center lg:text-left">
-          
-             
-    
+
+
+
 
 
             <motion.h1
@@ -86,13 +86,13 @@ export default function HeroSection() {
                 Start Free Trial
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="secondary" size="lg">
+              {/* <Button variant="secondary" size="lg">
                 <Play className="w-5 h-5" />
                 Watch Demo
-              </Button>
+              </Button> */}
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
@@ -116,7 +116,7 @@ export default function HeroSection() {
                 </svg>
                 Cancel anytime
               </span>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Right Column - Dashboard Preview */}

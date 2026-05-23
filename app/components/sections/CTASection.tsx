@@ -61,7 +61,7 @@ export default function CTASection() {
             operations with RentFlow. Setup takes less than 5 minutes.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               className="!bg-white !text-indigo-600 hover:!bg-indigo-50 !shadow-xl !shadow-indigo-900/20 group !border-0"
@@ -80,7 +80,7 @@ export default function CTASection() {
 
           <p className="mt-6 text-sm text-indigo-200/60">
             No credit card required · 14-day free trial · Cancel anytime
-          </p>
+          </p> */}
         </motion.div>
       </div>
     </section>

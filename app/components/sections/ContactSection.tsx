@@ -183,8 +183,8 @@ export default function ContactSection() {
                         placeholder="you@company.com"
                         disabled={isSubmitting}
                         className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${errors.email
-                            ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
-                            : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
+                          ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
+                          : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
                           } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
                       />
                       {errors.email && (
@@ -289,9 +289,9 @@ export default function ContactSection() {
                 icon: Mail,
                 title: "Email Us",
                 description: "Our friendly team is here to help.",
-                value: "abhirampagadala38@gmail.com",
+                value: "rentflowadmin@gmail.com",
                 color: "indigo",
-                href: "mailto:abhirampagadala38@gmail.com",
+                href: "mailto:rentflowadmin@gmail.com",
               },
               {
                 icon: Phone,
@@ -354,25 +354,25 @@ export default function ContactSection() {
                     <p className="text-sm text-gray-500 dark:text-gray-500 mb-1">{item.description}</p>
                     <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{item.value}</p>
                   </div>
-                   
+
                 </motion.a>
               );
             })}
-                  <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-md">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14514.020772102895!2d78.33092629699013!3d17.41388623564233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94788f8c70c5%3A0xab6ff27f0783ae19!2sNanakramguda%2C%20Telangana!5e1!3m2!1sen!2sin!4v1779528492098!5m2!1sen!2sin"
-    width="100%"
-    height="300"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    className="w-full"
-  />
-</div>
+            <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14514.020772102895!2d78.33092629699013!3d17.41388623564233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94788f8c70c5%3A0xab6ff27f0783ae19!2sNanakramguda%2C%20Telangana!5e1!3m2!1sen!2sin!4v1779528492098!5m2!1sen!2sin"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
+            </div>
           </div>
 
-        
+
 
         </motion.div>
       </div>

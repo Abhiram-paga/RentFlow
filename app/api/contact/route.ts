@@ -30,12 +30,10 @@ export async function POST(request: Request) {
       },
     });
 
-    const adminEmail = 'abhirampagadala38@gmail.com';
-
     // Email to Admin (You)
     const adminMailOptions = {
       from: process.env.EMAIL_USER,
-      to: adminEmail,
+      to: process.env.EMAIL_USER,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
