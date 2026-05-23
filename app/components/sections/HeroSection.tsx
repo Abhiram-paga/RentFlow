@@ -49,21 +49,10 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text */}
           <div className="text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-medium rounded-full
-                bg-indigo-50 dark:bg-indigo-500/10
-                text-indigo-600 dark:text-indigo-400
-                border border-indigo-100 dark:border-indigo-500/20"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              Now serving 2,500+ properties
-            </motion.div>
+          
+             
+    
+
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
