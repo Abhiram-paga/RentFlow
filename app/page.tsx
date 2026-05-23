@@ -30,7 +30,7 @@ export default function Home() {
         <TestimonialsSection />
         <FAQSection />
         <MobileAppSection />
-        <CTASection />
+        {/* <CTASection /> */}
         <ContactSection />
       </main>
       <Footer />
