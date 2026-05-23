@@ -108,13 +108,14 @@ export default function ContactSection() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.error || 'Failed to send message');
       }
 
       setIsSuccess(true);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error:', error);
-      alert('Failed to send message. Please try again later.');
+      alert(error.message || 'Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -181,11 +182,10 @@ export default function ContactSection() {
                         onChange={handleChange}
                         placeholder="you@company.com"
                         disabled={isSubmitting}
-                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${
-                          errors.email
+                        className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border ${errors.email
                             ? "border-red-500 focus:ring-red-500/20 focus:border-red-500"
                             : "border-gray-200 dark:border-white/10 focus:ring-indigo-500/20 focus:border-indigo-500"
-                        } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
+                          } text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 text-sm focus:outline-none focus:ring-2 transition-all`}
                       />
                       {errors.email && (
                         <p className="mt-1 text-xs text-red-500 font-medium">{errors.email}</p>

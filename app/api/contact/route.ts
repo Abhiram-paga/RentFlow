@@ -13,6 +13,14 @@ export async function POST(request: Request) {
       );
     }
 
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error("Missing EMAIL_USER or EMAIL_PASS environment variables");
+      return NextResponse.json(
+        { error: 'Server configuration error: Missing email credentials. Please check your .env file and restart the server.' },
+        { status: 500 }
+      );
+    }
+
     // Configure Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail', // You can change this to your preferred service
@@ -61,10 +69,10 @@ export async function POST(request: Request) {
       { success: true, message: 'Emails sent successfully' },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: error.message || 'Failed to send email' },
       { status: 500 }
     );
   }
